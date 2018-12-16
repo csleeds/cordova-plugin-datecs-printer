@@ -32,7 +32,8 @@ public class DatecsPrinter extends CordovaPlugin {
 				drawPageFrame,
 				printPage,
 				write,
-				writeHex;
+				writeHex,
+				setAlign;
 	}
 
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -153,6 +154,9 @@ public class DatecsPrinter extends CordovaPlugin {
 			case writeHex:
 				String hex = args.getString(0);
 			  printer.writeHex(hex);
+			  break;
+			case setAlign:
+			  printer.setAlign(args.getInt(0));
 			  break;
 		}
 		return true;
