@@ -704,4 +704,14 @@ public class DatecsSDKWrapper {
     private void sendStatusUpdate(boolean isConnected) {
         this.sendStatusUpdate(isConnected, true, false);
     }
+    
+    public void setAlign(int pos) {
+        try {
+            mPrinter.setAlign(pos);
+            mPrinter.flush();
+            mCallbackContext.success();
+        } catch (Exception e) {
+            mCallbackContext.error(e.getMessage());
+        }
+    }
 }
