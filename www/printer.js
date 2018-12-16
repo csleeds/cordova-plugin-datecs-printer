@@ -72,6 +72,9 @@ var printer = {
   },
   writeHex: function (hex, onSuccess, onError) {
     exec(onSuccess, onError, 'DatecsPrinter', 'writeHex', [hex]);
+  },
+  setAlign: function (align, onSuccess, onError) {
+    exec(onSuccess, onError, 'DatecsPrinter', 'setAlign', [align]);
   }
 };
 module.exports = printer;
